@@ -93,7 +93,7 @@ public class ItemServiceImpl implements ItemService {
             return Collections.emptyList();
         }
         String searchText = text.toLowerCase();
-        log.info("Поиск вещи по имени или описании!");
+        log.info("Поиск вещи по имени или описании");
         return itemStorage.findAll().stream()
                 .filter(Item::getAvailable)
                 .filter(item ->
