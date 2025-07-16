@@ -1,4 +1,4 @@
-package ru.practicum.shareit.user.storage;
+package ru.practicum.shareit.user.repository;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.validator.routines.EmailValidator;
@@ -12,7 +12,7 @@ import java.util.*;
 
 @Repository
 @Slf4j
-public class UserStorageImpl implements UserStorage {
+public class UserRepositoryImpl implements UserRepository {
 
     private final Map<Long, User> users = new HashMap<>();
 

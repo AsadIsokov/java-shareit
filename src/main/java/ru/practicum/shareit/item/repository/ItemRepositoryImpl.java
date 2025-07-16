@@ -1,4 +1,4 @@
-package ru.practicum.shareit.item.storage;
+package ru.practicum.shareit.item.repository;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
@@ -11,7 +11,7 @@ import java.util.Map;
 
 @Repository
 @Slf4j
-public class ItemStorageImpl implements ItemStorage {
+public class ItemRepositoryImpl implements ItemRepository {
     private final Map<Long, Item> items = new HashMap<>();
 
     private long getNextId() {
