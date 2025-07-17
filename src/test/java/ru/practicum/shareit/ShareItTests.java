@@ -9,11 +9,11 @@ import ru.practicum.shareit.item.ItemController;
 import ru.practicum.shareit.item.ItemMapper;
 import ru.practicum.shareit.item.dto.ItemDto;
 import ru.practicum.shareit.item.service.ItemServiceImpl;
-import ru.practicum.shareit.item.storage.ItemStorageImpl;
+import ru.practicum.shareit.item.repository.ItemRepositoryImpl;
 import ru.practicum.shareit.user.User;
 import ru.practicum.shareit.user.UserController;
 import ru.practicum.shareit.user.service.UserServiceImpl;
-import ru.practicum.shareit.user.storage.UserStorageImpl;
+import ru.practicum.shareit.user.repository.UserRepositoryImpl;
 
 import java.util.List;
 
@@ -22,21 +22,21 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class ShareItTests {
 
-    private UserStorageImpl userStorage;
+    private UserRepositoryImpl userStorage;
     private UserServiceImpl userService;
     private UserController userController;
 
-    private ItemStorageImpl itemStorage;
+    private ItemRepositoryImpl itemStorage;
     private ItemServiceImpl itemService;
     private ItemController itemController;
 
     @BeforeEach
     void setUp() {
-        userStorage = new UserStorageImpl();
+        userStorage = new UserRepositoryImpl();
         userService = new UserServiceImpl(userStorage);
         userController = new UserController(userService);
 
-        itemStorage = new ItemStorageImpl();
+        itemStorage = new ItemRepositoryImpl();
         ItemMapper itemMapper = new ItemMapper();
         itemService = new ItemServiceImpl(itemStorage, userStorage, itemMapper);
         itemController = new ItemController(itemService);
